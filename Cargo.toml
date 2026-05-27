@@ -1,0 +1,21 @@
+[package]
+name = "rsomics-bam-quickcheck"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.91"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/omics-rust/rsomics-bam-quickcheck"
+authors = ["Zane Leong <efd@live.com>"]
+description = "Quickly validate a BAM file's BGZF framing and header magic — Rust port of samtools quickcheck"
+
+[[bin]]
+name = "rsomics-bam-quickcheck"
+path = "src/main.rs"
+
+[dependencies]
+rsomics-common = { version = "0.6" }
+clap = { version = "4", features = ["derive"] }
+flate2 = "1"
+
+[dev-dependencies]
+tempfile = "3"
