@@ -12,6 +12,11 @@ description = "Quickly validate a BAM file's BGZF framing and header magic — R
 name = "rsomics-bam-quickcheck"
 path = "src/main.rs"
 
+
+[lib]
+name = "rsomics_bam_quickcheck"
+path = "src/lib.rs"
+doctest = false
 [dependencies]
 rsomics-common = { version = "0.6" }
 clap = { version = "4", features = ["derive"] }
