@@ -1,20 +1,9 @@
-//! Quickly validate a BAM file — port of `samtools quickcheck`.
-//!
-//! Checks performed (matches samtools 1.23.1 behavior):
-//! 1. The file begins with a valid BGZF block magic (`1f 8b 08 04`).
-//! 2. The first BGZF block decompresses and starts with the BAM header magic
-//!    `BAM\1` (`42 41 4d 01`).
-//! 3. The file ends with the 28-byte BGZF empty-block EOF marker
-//!    (`1f 8b 08 04 00 00 00 00 00 ff 06 00 42 43 02 00 1b 00 03 00 00 00 00 00 00 00 00 00`)
-//!    — unless `--no-eof` is set.
-//!
-//! Exit code 0 = all input files valid; non-zero = at least one invalid.
+//! Validate a BAM file — port of `samtools quickcheck`.
 //!
 //! ## Origin
-//! Independent Rust reimplementation of `samtools quickcheck`. samtools is
-//! MIT-licensed; the precise BGZF EOF marker bytes and the "BAM\1" header magic
-//! check were determined from samtools' MIT-licensed source plus the SAM/BAM
-//! and BGZF specifications.
+//! Independent Rust reimplementation of `samtools quickcheck`. The BGZF EOF
+//! marker bytes and `BAM\1` header magic were confirmed from samtools' MIT
+//! source and the SAM/BAM/BGZF specifications.
 //!
 //! License: MIT OR Apache-2.0. Upstream credit: samtools (MIT).
 
